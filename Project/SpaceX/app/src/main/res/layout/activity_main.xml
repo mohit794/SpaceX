@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dashlayout"
+    tools:context=".Activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crew Members"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:padding="10dp"
+            android:id="@+id/text"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/medium"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/view"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/text"
+            android:background="@color/gray2"
+            />
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/shimmer"
+            app:shimmer_colored="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layout"
+            android:visibility="visible"
+            android:layout_marginTop="10dp"
+            app:shimmer_highlight_color="#70C0B9B9"
+            android:layout_height="100dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/tt"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="#ececec"
+                        app:cardCornerRadius="27dp"
+                        android:padding="5dp"
+                        android:layout_gravity="center" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="100dp"
+                        android:padding="5dp"
+                        android:layout_marginStart="10dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_gravity="center"
+                        android:layout_height="25dp"/>
+                </LinearLayout>
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tt"
+                    android:layout_height="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:id="@+id/layout"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/view"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Refresh"
+                android:id="@+id/refresh"
+                android:backgroundTint="@color/purple_700"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Delete"
+                android:backgroundTint="@color/purple_700"
+                android:id="@+id/reset"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_below="@id/layout"
+            android:id="@+id/recyclerView"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>
